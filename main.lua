@@ -27,6 +27,8 @@ VIRTUAL_HEIGHT = 243
 -- paddle movement speed
 PADDLE_SPEED = 200
 
+local scoreNeededToWin = 1
+
 -- Love game loop funcs
 function love.load()
     loadFonts()
@@ -258,9 +260,9 @@ function drawPlayerScoreMessage()
     end
 
     love.graphics.setFont(smallFont)
-    if(player1Score > 2) then
+    if(player1Score >= scoreNeededToWin) then
         gameState = 'player1Won'
-    elseif(player2Score > 2) then
+    elseif(player2Score >= scoreNeededToWin) then
         gameState = 'player2Won'
     else 
         love.graphics.printf('Player ' .. scoringPlayer .. ' scored!', 0, 30, VIRTUAL_WIDTH, 'center')
