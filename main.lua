@@ -105,7 +105,7 @@ function loadPlayers()
     player2 = Paddle(VIRTUAL_WIDTH - 10 - player1.width, VIRTUAL_HEIGHT - 10 - player1.height, {
         upKey = 'up',
         downKey = 'down',
-        isComputer = true
+        isComputer = false
     })
 
     player1Score = 0

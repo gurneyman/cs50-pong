@@ -23,10 +23,10 @@ function Paddle:init(x, y, controlTable)
 end
 
 function Paddle:move(screenHeight, paddleSpeed, ball)
-    if (love.keyboard.isDown(self.upKey) or (self.isComputer and self.y > ball.y + 15) and self.y > 0)
+    if ((love.keyboard.isDown(self.upKey) or (self.isComputer and self.y > ball.y + 15)) and self.y > 0)
         then
         self.dy = -paddleSpeed
-    elseif (love.keyboard.isDown(self.downKey) or (self.isComputer and self.y < ball.y - 15) and self.y < screenHeight - self.height)
+    elseif ((love.keyboard.isDown(self.downKey) or (self.isComputer and self.y < ball.y - 15)) and self.y < screenHeight - self.height)
      then
         self.dy = paddleSpeed
     else 
